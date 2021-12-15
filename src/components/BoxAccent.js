@@ -59,7 +59,7 @@ class BoxAccent extends Component{
                     <a href="#" className="js-tip"><span className="ico-bullet4"></span>{this.state.contents.find(x => x.num === this.state.idx).tit}</a>
                     <BoxTip tit={this.state.contents.find(x => x.num === this.state.idx).tit} desc={this.state.contents.find(x => x.num === this.state.idx).desc}></BoxTip>
                 </div>
-                <p className="txt-sub">보조텍스트 <br />보조텍스트</p>
+                <p className="txt-sub">{this.props.subTxt}</p>
                 <a href="/" className="btn-detail js-btn-active">보장금액 자세히 보기</a>
             </div>
         </div>

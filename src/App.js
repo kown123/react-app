@@ -9,7 +9,7 @@ import Tab from './components/Tab';
 import BoxApply from './components/BoxApply';
 import BoxRecommend from './components/BoxRecommend';
 import Tag from './components/Tag';
-import ListGuide from './components/ListGuide';
+// import ListGuide from './components/ListGuide';
 
 class App extends Component {
   constructor(props){
@@ -33,7 +33,7 @@ class App extends Component {
 
         <BoxApply></BoxApply>
 
-        <BoxAccent tit={["원하는 만큼,", <br />,"정해진 기간 동안 보장받는"]} accent="실속 있는 사망보험"></BoxAccent>
+        <BoxAccent tit={["원하는 만큼,", <br />,"정해진 기간 동안 보장받는"]} accent="실속 있는 사망보험" subTxt={["미성년 자녀가 있다면",<br />,"양육자금서비스특약으로 한 번 더 안심"]}></BoxAccent>
 
         {/* <ListGuide></ListGuide> */}
 
