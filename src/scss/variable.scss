@@ -1,0 +1,52 @@
+//primary-color
+$cyan:#02a2af;
+$cyanLight:#03c7dd;
+$yellow:#FFC40D;
+$white:#FFFFFF;
+$white90:rgba(255,255,255, .9);
+$black:#000000;
+$black50:rgba(0,0,0, .5);
+$red:#ff7073;
+$opacity100:1;
+$opacity50:0.5;
+
+// @if $dark-theme {
+// 	$primary-color: darken($primary-color, 60%);
+// 	$accent-color: lighten($accent-color, 60%);
+// }
+  
+//colot palette
+$gray-900:#253237 !default;
+$gray-800:#36474E;
+$gray-600:#536E78;
+$gray-400:#76909A;
+$gray-200:#afbfc4;
+$gray-100:#E0E9EF;
+$gray-50:#F3F3F3;
+
+$coral-900:#C90000;
+$coral-400:#FD404F;
+$coral-200:#F8959B;
+$coral-100:#FFCBD3;
+
+$blue-700:#006DDA;
+$blue-500:#008DFC;
+$blue-300:#41AFFD;
+$blue-100:#B3DBFE;
+
+$orange-900:#F58219;
+$orange-400:#F9AA28;
+$orange-200:#FCDB38;
+$orange-100:#FCF177;
+
+$green-700:#03BB34;
+$green-500:#0FF35A;
+$green-300:#41FD8F;
+$green-100:#BFFDD1;
+
+$easing: cubic-bezier(0.4, 0, 0.2, 1);
+$easeOut:ease-out;
+$easing-bounce: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+$easingTime-f: .2s;
+$easingTime-n: .3s;
+$easingTime-s: .7s;

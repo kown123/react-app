@@ -1,0 +1,121 @@
+// mixin.scss
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: "") {
+	$index: str-index($string, $search);
+
+	@if $index {
+		@return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+	}
+
+	@return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+@mixin font-face($name, $name2, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name2);
+		font-style: $style;
+		font-weight: $weight;
+		src: $src;
+	}
+}
+
+
+//font 설정
+@mixin fontSet($size, $lineHeight, $weight: null){
+	font-size:$size;
+	line-height:$lineHeight;
+	@if $weight{
+		font-weight:$weight;
+	}@else{
+		font-weight:400;
+	}
+
+	@if $weight == 700{
+		letter-spacing: -1px;
+	}
+}
+
+//bottomUp animation
+@mixin bottomUpFunc($num, $startY, $destY, $duration, $fill:null, $delay:null) {
+	@keyframes bottomUpFunc#{$num}{
+		from{
+			transform: translateY($startY);
+		}
+		to{
+			transform: translateY($destY);
+		}
+	}	
+	.bottomup-func#{$num}{
+		// -webkit-animation:bottomUpFunc#{$num} $duration $fill $delay;
+		// -moz-animation:bottomUpFunc#{$num} $duration $fill $delay;
+		animation:bottomUpFunc#{$num} $duration $fill $delay;
+		will-change:transform;
+	}
+}
+
+//width animation
+@mixin widthFunc($num, $startY, $destY, $duration, $fill:null, $delay:null) {
+	@keyframes widthFunc#{$num}{
+		from{
+			width:$startY;
+		}
+		to{
+			width:$destY;
+		}
+	}	
+	.width-func#{$num}{
+		// -webkit-animation:bottomUpFunc#{$num} $duration $fill $delay;
+		// -moz-animation:bottomUpFunc#{$num} $duration $fill $delay;
+		animation:widthFunc#{$num} $duration $fill $delay;
+	}
+}
+
+
+//scale animation
+@mixin scaleFunc($num, $start, $dest, $duration, $fill:null, $delay:null) {
+	@keyframes sclaeFunc#{$num}{
+		0%{
+			transform: scale($start);
+		}
+		50%{
+			transform: scale($dest);
+		}
+		100%{
+			transform: scale($start);
+		}
+	}	
+	.scale-func#{$num}{
+		// -webkit-animation:sclaeFunc#{$num} $duration $fill $delay;
+		// -moz-animation:sclaeFunc#{$num} $duration $fill $delay;
+		animation:sclaeFunc#{$num} $duration $fill $delay;
+		will-change:transform;
+	}
+}
+
+
+
+
+

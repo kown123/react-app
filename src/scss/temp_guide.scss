@@ -1,0 +1,46 @@
+// new_common.scss
+@import 'mixin';
+@import 'variable';
+
+
+////////////////////////
+//임시 guide class s
+.component{background:#fff;padding:10px 20px;box-sizing: border-box;} 
+.tit-component{margin-top:50px;
+	@include fontSet(16px, 20px);
+	color:$black;
+	&:first-child{
+		margin-top:0;
+	}
+}
+.tit-component + .tit-component-sub{margin-top:5px;}
+.tit-component-sub{
+	display:block;
+	margin:20px -20px 10px;
+	padding:10px 20px;
+	@include fontSet(12px, 16px);
+	&:before{
+		content:"#";
+	}
+	background-color:$gray-100;
+}
+
+.color-guide{
+	margin-top:10px;
+	> .item{
+		width:50px;height:50px;
+		border-radius: 10px;
+		border:1px solid $gray-100;
+		align-items:center;
+		&.bg-gray5, &.bg-gray6, &.bg-gray7, &.bg-primary4{
+			color:#fff
+		}
+	}
+	&._scroll{
+		> .item{
+			@include fontSet(12px, 16px)
+		}
+	}
+}
+//임시 e
+///////////////////////////
