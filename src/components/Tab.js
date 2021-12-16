@@ -13,13 +13,14 @@ class Tab extends Component{
             ]
         }
     }
-    tabToggle(e){
+    tabToggle = (e) => {
         // let $cont = $(e.currentTarget).attr("href");
+        let idx = $(e.currentTarget).parent().index();
 
         e.preventDefault();
         $(e.currentTarget).addClass("on").parent().siblings().find("> a").removeClass("on");
         $(e.currentTarget).parents(".tab-list").next(".js-tab-cont").hide();
-        //this.setState(content_id = $(e.currentTarget).parent().index());
+        this.setState({content_id: idx});
     }
 
     render(){

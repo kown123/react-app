@@ -30,7 +30,7 @@ class App extends Component {
     // window.$ = window.jQuery = jQuery;
     return (
       <div className="App wrap_new">
-        <p class="tit-component-sub">Box</p>
+        <p className="tit-component-sub">Box</p>
         <div className="box-default bg-gray1 mt10">
             <ul className="list-type02">
                 <li><code>.box-white</code> border-radius 와 box-shadow가 들어가있는 박스</li>
@@ -66,8 +66,8 @@ class App extends Component {
 
         <Tag data={this.state.tags}></Tag>
 
-        <div class="box-default bg-gray1 mt50">
-            <ul class="list-type02">
+        <div className="box-default bg-gray1 mt50">
+            <ul className="list-type02">
                 <li> <code>.js-tab-list</code> 클래스를 부여하면 탭기능이 활성화됨.</li>
                 <li> <code>.js-tab-cont</code> 클래스로 탭 컨텐츠영역으로 지정함.</li>
                 <li><code>a href="#plan1"</code> 함수로 탭컨텐츠 ID를 유니크하게 지정함.</li>
