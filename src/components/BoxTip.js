@@ -1,20 +1,27 @@
 import React, {Component} from 'react';
+import $ from 'jquery';
 
 class BoxTip extends Component{
-    //tooltip 비활성화
-    toolTipCls(e){//target
-        var obj = e.target;
+    tipOpen(e){
+        // console.log(e.currentTarget);
         e.preventDefault();
-        obj.parents(".js-define").removeClass("on").find(".tip-type").remove();
+        $(e.currentTarget).parent().addClass("on");
+    }
+    tipCls(e){
+        e.preventDefault();
+        $(e.currentTarget).parents(".js-define").removeClass("on");
     }
     render(){
         return(
-            <div className="tip-type tips">
-                <dl>
-                    <dt>{this.props.tit}</dt>
-                    <dd>{this.props.desc}</dd>
-                </dl>
-                <a href="#" className="cls"><span>닫기</span></a>
+            <div className="txt-qna js-define">
+                <a href="#" onClick={this.tipOpen}><span className="ico-bullet4"></span>{this.props.tit}</a>
+                <div className="tip-type tips">
+                    <dl>
+                        <dt>{this.props.tit}</dt>
+                        <dd>{this.props.desc}</dd>
+                    </dl>
+                    <a href="#" className="cls" onClick={this.tipCls}><span>닫기</span></a>
+                </div>
             </div>
         )
     }
