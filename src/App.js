@@ -13,9 +13,9 @@ import BoxTip from './components/BoxTip';
 import Btn from './components/Btn';
 import Icon from './components/Icon'
 import Toggle from './components/Toggle'
+// import Banner from './components/Banner'
 import Banner from './components/Banner'
 import LinkList from './components/LinkList';
-
 import './App.css';
 
 class App extends Component {
@@ -69,14 +69,14 @@ class App extends Component {
       <div className="App wrap_new">
         
         {/* 버튼 모음 */}
-        <p className="tit-component-sub">Btn</p>
+        <p className="tit-component-sub mt0">Btn</p>
         <Btn type="primary" text="버튼 타입1"></Btn>
         <Btn type="second" text="버튼 타입2"></Btn>
         <Btn type="ex1" text="버튼 타입3"></Btn>
         <Btn type="ex2" text="버튼 타입4"></Btn>
         
         {/* icon 모음 */}
-        <p className="tit-component-sub">Icon</p>
+        <p className="tit-component-sub mt50">Icon</p>
         <div className="mt10">
           <Icon type="bullet" num="0"></Icon>
           <Icon type="bullet" num="1"></Icon>
@@ -155,24 +155,25 @@ class App extends Component {
         </div>
 
         {/* Box 모음 */}
-        <p className="tit-component-sub">BoxRecommend</p>
+        <p className="tit-component-sub mt50">BoxRecommend</p>
         <BoxRecommend></BoxRecommend>
 
-        <p className="tit-component-sub">BoxApply</p>
+        <p className="tit-component-sub mt50">BoxApply</p>
         <BoxApply></BoxApply>
         
-        <p className="tit-component-sub">BoxAccent</p>
+        <p className="tit-component-sub mt50">BoxAccent</p>
         {_boxAceent}
 
-        <p className="tit-component-sub">BoxTip</p>
+        <p className="tit-component-sub mt50">BoxTip</p>
         <BoxTip tit="고액암이란?" desc="뼈 및 관절연골, 뇌 및 중추신경계통, 림프, 조혈 및 관련조직 등에 발생하는 암"></BoxTip>
 
-        <p className="tit-component-sub">BoxProd</p>
+        <p className="tit-component-sub mt50">BoxProd</p>
         <BoxProd pName="정기보험" pDesc="#해지환금금이 없어요 #저렴한 암보험"></BoxProd>
 
+        <p className="tit-component-sub mt50">Banner</p>
         <Banner data={this.state.bann_list}></Banner>
 
-        <p className="tit-component-sub">Tab &amp; TabCont</p>
+        <p className="tit-component-sub mt50">Tab &amp; TabCont</p>
         <Tab
           data={this.state.tablist}
           current={this.state.selected_tab}
@@ -184,13 +185,13 @@ class App extends Component {
         ></Tab>
         <TabCont content={this.state.tab_content[this.state.selected_tab].cont}></TabCont>
 
-        <p className="tit-component-sub">Toggle</p>
+        <p className="tit-component-sub mt50">Toggle</p>
         <Toggle></Toggle>
-        <p className="tit-component-sub">LinkList</p>
+        <p className="tit-component-sub mt50">LinkList</p>
         <LinkList data={this.state.link_list}></LinkList>
 
 
-        <p className="tit-component-sub">Tag list</p>
+        <p className="tit-component-sub mt50">Tag list</p>
         <Tag data={this.state.tags}></Tag>
 
       </div>

@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import $ from 'jquery'
-import { bannSwiper } from '../js/newBundle'
 
 class Banner extends Component{
     render(){
@@ -17,9 +15,8 @@ class Banner extends Component{
                     </div>
                 </div>
             )
-        }
-      return (
-        
+        }        
+    return (
         // <!-- Slider main container -->
         <div className="swiper-container mt10">
             <div className="swiper-wrapper">

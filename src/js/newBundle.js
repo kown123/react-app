@@ -1,6 +1,10 @@
 import $ from 'jquery';
 import jQuery from 'jquery';
-import Swiper from 'swiper';
+// import Swiper from 'swiper';
+// core version + navigation, pagination modules:
+import Swiper, { Navigation, Pagination } from 'swiper';
+// configure Swiper to use modules
+Swiper.use([Navigation, Pagination]);
 
 /* eslint-disable no-undef */
 /* eslint-disable no-restricted-globals */
@@ -627,11 +631,15 @@ jQuery(document).ready(function(){
     
     
     var bannSwiper = new Swiper(".swiper-container", {
+        // on:{
+        //     init:function(){
+        //         console.log('bannSwiper');
+        //     }
+        // },
         pagination: {
             el: '.swiper-pagination',
             type: 'bullets',
-        },
-        
+        },        
         speed : 600,
         spaceBetween: 100,
         autoplay : 3000
@@ -709,12 +717,6 @@ $(document).ready(function() {
 // 		},500);
 	}
     
-    const event_banner = new Swiper('#event_banner_box',{
-        pagination: {
-            el: '#event_banner_box .swiper-pagination',
-            type: 'bullets',
-        },
-    });
 
 	/* setGnbTabRenew
 	GNB 리뉴얼 버전
