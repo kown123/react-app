@@ -10,7 +10,7 @@ class Tab extends Component{
                     <a
                         href="/" 
                         data-id={data[i].id}
-                        className={ this.props.current == data[i].id ? "on": "" }
+                        className={ this.props.current === data[i].id ? "on": "" }
                         onClick={function(e){
                             e.preventDefault();
                             this.props.onChangeTab(e.target.dataset.id);

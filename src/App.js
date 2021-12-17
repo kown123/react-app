@@ -10,8 +10,13 @@ import BoxRecommend from './components/BoxRecommend';
 import BoxProd from './components/BoxProd';
 import Tag from './components/Tag';
 import BoxTip from './components/BoxTip';
-import './App.css';
+import Btn from './components/Btn';
+import Icon from './components/Icon'
+import Toggle from './components/Toggle'
+import Banner from './components/Banner'
+import LinkList from './components/LinkList';
 
+import './App.css';
 
 class App extends Component {
   constructor(props){
@@ -41,6 +46,18 @@ class App extends Component {
         {id:3, clsname:"tag-type fill yellow", text:"태그3"},
         {id:4, clsname:"tag-type fill coral", text:"태그4"},
         {id:5, clsname:"tag-type fill black", text:"태그5"}
+      ],
+
+      //배너 리스트
+      bann_list:[
+        {id:0, link:"#link1", txt:"배너1"},
+        {id:1, link:"#link2", txt:"배너2"},
+        {id:2, link:"#link3", txt:"배너3"}
+      ],
+
+      //링크 리스트
+      link_list:[
+        {id:0, link:"link1", txt:"링크1"}
       ]
     }
   }
@@ -50,6 +67,94 @@ class App extends Component {
 
     return (
       <div className="App wrap_new">
+        
+        {/* 버튼 모음 */}
+        <p className="tit-component-sub">Btn</p>
+        <Btn type="primary" text="버튼 타입1"></Btn>
+        <Btn type="second" text="버튼 타입2"></Btn>
+        <Btn type="ex1" text="버튼 타입3"></Btn>
+        <Btn type="ex2" text="버튼 타입4"></Btn>
+        
+        {/* icon 모음 */}
+        <p className="tit-component-sub">Icon</p>
+        <div className="mt10">
+          <Icon type="bullet" num="0"></Icon>
+          <Icon type="bullet" num="1"></Icon>
+          <Icon type="bullet" num="2"></Icon>
+          <Icon type="bullet" num="3"></Icon>
+          <Icon type="bullet" num="4"></Icon>
+          <Icon type="bullet" num="5"></Icon>
+          <Icon type="bullet" num="6"></Icon>
+          <Icon type="bullet" num="7"></Icon>
+          <Icon type="bullet" num="8"></Icon>
+          <Icon type="bullet" num="9"></Icon>
+          <Icon type="bullet" num="10"></Icon>
+          <Icon type="bullet" num="11"></Icon>
+          <Icon type="bullet" num="12"></Icon>
+          <Icon type="bullet" num="13"></Icon>
+          <Icon type="bullet" num="14"></Icon>
+        </div>
+        <div className="mt10">
+          <Icon type="func" num="0"></Icon>
+          <Icon type="func" num="1"></Icon>
+          <Icon type="func" num="2"></Icon>
+          <Icon type="func" num="3"></Icon>
+          <Icon type="func" num="4"></Icon>
+          <Icon type="func" num="5"></Icon>
+          <Icon type="func" num="6"></Icon>
+          <Icon type="func" num="7"></Icon>
+          <Icon type="func" num="8"></Icon>
+          <Icon type="func" num="9"></Icon>
+          <Icon type="func" num="10"></Icon>
+          <Icon type="func" num="11"></Icon>
+          <Icon type="func" num="12"></Icon>
+          <Icon type="func" num="13"></Icon>
+          <Icon type="func" num="14"></Icon>
+        </div>
+        <div className="mt10">
+          <Icon type="emoji" num="0"></Icon>
+          <Icon type="emoji" num="1"></Icon>
+          <Icon type="emoji" num="2"></Icon>
+          <Icon type="emoji" num="3"></Icon>
+          <Icon type="emoji" num="4"></Icon>
+          <Icon type="emoji" num="5"></Icon>
+          <Icon type="emoji" num="6"></Icon>
+          <Icon type="emoji" num="7"></Icon>
+          <Icon type="emoji" num="8"></Icon>
+          <Icon type="emoji" num="9"></Icon>
+          <Icon type="emoji" num="10"></Icon>
+          <Icon type="emoji" num="11"></Icon>
+          <Icon type="emoji" num="12"></Icon>
+        </div>
+        <div className="mt10">
+          <Icon type="prod" num="0"></Icon>
+          <Icon type="prod" num="1"></Icon>
+          <Icon type="prod" num="2"></Icon>
+          <Icon type="prod" num="3"></Icon>
+          <Icon type="prod" num="4"></Icon>
+          <Icon type="prod" num="5"></Icon>
+          <Icon type="prod" num="6"></Icon>
+          <Icon type="prod" num="7"></Icon>
+          <Icon type="prod" num="8"></Icon>
+          <Icon type="prod" num="9"></Icon>
+          <Icon type="prod" num="10"></Icon>
+          <Icon type="prod" num="11"></Icon>
+          <Icon type="prod" num="12"></Icon>
+          <Icon type="prod" num="13"></Icon>
+          <Icon type="prod" num="14"></Icon>
+          <Icon type="prod" num="15"></Icon>
+          <Icon type="prod" num="16"></Icon>
+          <Icon type="prod" num="17"></Icon>
+          <Icon type="prod" num="18"></Icon>
+        </div>
+        <div className="mt10">
+          <Icon type="share" num="0"></Icon>
+          <Icon type="share" num="1"></Icon>
+          <Icon type="share" num="2"></Icon>
+          <Icon type="share" num="3"></Icon>
+        </div>
+
+        {/* Box 모음 */}
         <p className="tit-component-sub">BoxRecommend</p>
         <BoxRecommend></BoxRecommend>
 
@@ -65,6 +170,7 @@ class App extends Component {
         <p className="tit-component-sub">BoxProd</p>
         <BoxProd pName="정기보험" pDesc="#해지환금금이 없어요 #저렴한 암보험"></BoxProd>
 
+        <Banner data={this.state.bann_list}></Banner>
 
         <p className="tit-component-sub">Tab &amp; TabCont</p>
         <Tab
@@ -76,8 +182,13 @@ class App extends Component {
             })
           }.bind(this)}
         ></Tab>
-
         <TabCont content={this.state.tab_content[this.state.selected_tab].cont}></TabCont>
+
+        <p className="tit-component-sub">Toggle</p>
+        <Toggle></Toggle>
+        <p className="tit-component-sub">LinkList</p>
+        <LinkList data={this.state.link_list}></LinkList>
+
 
         <p className="tit-component-sub">Tag list</p>
         <Tag data={this.state.tags}></Tag>

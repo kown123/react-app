@@ -631,6 +631,7 @@ jQuery(document).ready(function(){
             el: '.swiper-pagination',
             type: 'bullets',
         },
+        
         speed : 600,
         spaceBetween: 100,
         autoplay : 3000

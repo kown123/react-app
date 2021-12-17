@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import "../js/newBundle";//btn motion
-
+// eslint-disable-next-line no-unused-vars
+import { btnAction } from '../js/newBundle'
 class BoxApply extends Component{
     render(){
       return (
@@ -9,7 +9,7 @@ class BoxApply extends Component{
               className="js-btn-active"
               onClick={function(e){
                 e.preventDefault();  
-              }.bind(this)}
+              }}
             >
                 고객님께서 <br />현재 <strong>가입중인 상품</strong>이<br /><strong className="c-primary2">6건</strong> 있어요.
             </a>

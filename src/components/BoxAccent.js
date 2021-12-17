@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import BoxTip from './BoxTip';
+// eslint-disable-next-line no-unused-vars
 import { btnAction } from "../js/newBundle";//btn motion
 
 class BoxAccent extends Component{  
@@ -14,7 +15,7 @@ class BoxAccent extends Component{
                   href="/" className="btn-detail js-btn-active"
                   onClick={function(e){
                     e.preventDefault();  
-                  }.bind(this)}
+                  }}
                 >보장금액 자세히 보기</a>
             </div>
         </div>
