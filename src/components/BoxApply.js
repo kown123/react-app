@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import "../js/newBundle";//btn motion
 
 class BoxApply extends Component{
     render(){

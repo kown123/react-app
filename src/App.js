@@ -11,7 +11,6 @@ import BoxProd from './components/BoxProd';
 import Tag from './components/Tag';
 import BoxTip from './components/BoxTip';
 import './App.css';
-// import $ from 'jquery';
 
 
 class App extends Component {
@@ -57,7 +56,6 @@ class App extends Component {
         <p className="tit-component-sub">BoxApply</p>
         <BoxApply></BoxApply>
         
-
         <p className="tit-component-sub">BoxAccent</p>
         {_boxAceent}
 

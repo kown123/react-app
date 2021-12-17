@@ -176,20 +176,20 @@ var tooltips = [
 ]
 
 //tooltip 비활성화
-// var toolTipCls = function(){//target
-//     $(".tip-type a.cls").on("click", function(e){
-//         e.preventDefault();
-//         $(this).parents(".js-define").removeClass("on");
-//     });
-// }
+var toolTipCls = function(){//target
+    $(".tip-type a.cls").on("click", function(e){
+        e.preventDefault();
+        $(this).parents(".js-define").removeClass("on");
+    });
+}
 
-// var toolFunction = function(){
-//     $(".js-tip").on("click", function(e){
-//         e.preventDefault();
-//         $(this).parents(".js-define").addClass("on");
-//     });
-//     toolTipCls();
-// }
+var toolFunction = function(){
+    $(".js-tip").on("click", function(e){
+        e.preventDefault();
+        $(this).parents(".js-define").addClass("on");
+    });
+    toolTipCls();
+}
 
 
 //picker 안내문구
@@ -601,7 +601,7 @@ class myInfo {
 
 //init
 function uiInit(){
-    // toolFunction();
+    toolFunction();
     txtLenCheck();
     inputFocus();
     // btnAction(); //211018_2 수정

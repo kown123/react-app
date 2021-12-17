@@ -4,7 +4,13 @@ class BoxRecommend extends Component{
     render(){
       return (
         <div className="box-white product">
-            <a href="/" className="js-btn-active">
+            <a 
+              href="/" 
+              className="js-btn-active"
+              onClick={function(e){
+                e.preventDefault();
+              }.bind(this)}
+            >
                 <span className="p-name">상품 수식어구<br /><em><span>상품명</span></em></span>
                 <span className="mt5">(40,000명 가입)</span>
                 <span className="fee">
