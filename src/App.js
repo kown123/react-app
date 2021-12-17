@@ -28,9 +28,12 @@ class App extends Component {
       selected_tab:0, //탭 인덱스
       //탭 컨텐츠
       tab_content:[
-        {id:0, cont:"컨텐츠1"},
-        {id:1, cont:"컨텐츠2"}
+        {cont:"탭 컨텐츠1"},
+        {cont:"탭 컨텐츠2"}
       ],
+
+      //box 상품 특징 컨텐츠
+      box_content:{tit:"원하는 만큼,\n정해진 기간 동안 보장받는", accent:"실속 있는 사망보험", subTxt:"미성년 자녀가 있다면 \n양육자금서비스특약으로 한 번 더 안심"},
 
       //태그 리스트
       tags:[
@@ -43,58 +46,42 @@ class App extends Component {
     }
   }
   render(){
+    var _boxAceent = null;
+    _boxAceent = <BoxAccent tit={this.state.box_content.tit} accent={this.state.box_content.accent} subTxt={this.state.box_content.subTxt}></BoxAccent>
 
     return (
       <div className="App wrap_new">
-        <p className="tit-component-sub">Box</p>
-        <div className="box-default bg-gray1 mt10">
-            <ul className="list-type02">
-                <li><code>.box-white</code> border-radius 와 box-shadow가 들어가있는 박스</li>
-                <li><code>.product</code> 메인 페이지 에서 사용되는 상품 리스트 형태의 박스</li>
-            </ul>
-        </div>
+        <p className="tit-component-sub">BoxRecommend</p>
         <BoxRecommend></BoxRecommend>
 
-        <div className="box-default bg-gray1 mt50">
-            <ul className="list-type02">
-                <li><code>.box-default.notice</code> 메인상단에서 사용되는 알림형 박스</li>
-            </ul>
-        </div>
+        <p className="tit-component-sub">BoxApply</p>
         <BoxApply></BoxApply>
+        
 
-        <div className="box-default bg-gray1 mt50">
-            <ul className="list-type02">
-                <li><code>.box-accent</code> 상품안내 페이지 내 상품특징을 표현할때 사용하는 박스</li>
-            </ul>
-        </div>
-        <BoxAccent tit={["원하는 만큼,", <br />,"정해진 기간 동안 보장받는"]} accent="실속 있는 사망보험" subTxt={["미성년 자녀가 있다면",<br />,"양육자금서비스특약으로 한 번 더 안심"]}></BoxAccent>
+        <p className="tit-component-sub">BoxAccent</p>
+        {_boxAceent}
 
-        <div className="box-default bg-gray1 mt50">
-            <ul className="list-type02">
-                <li>각 툴팁의 텍스트는 <code>tooltips</code> 데이터 객체를 통해 구성함. </li>
-                <li><code>toolTip(this, 데이터 번호, 방향)</code> 함수를 통해 호출.</li>
-                <li>방향(선택) 미설정시 default 위로 노출됨.</li>
-            </ul>
-        </div>
+        <p className="tit-component-sub">BoxTip</p>
         <BoxTip tit="고액암이란?" desc="뼈 및 관절연골, 뇌 및 중추신경계통, 림프, 조혈 및 관련조직 등에 발생하는 암"></BoxTip>
 
+        <p className="tit-component-sub">BoxProd</p>
         <BoxProd pName="정기보험" pDesc="#해지환금금이 없어요 #저렴한 암보험"></BoxProd>
 
 
-        <p class="tit-component-sub">Tab list</p>
+        <p className="tit-component-sub">Tab &amp; TabCont</p>
         <Tab
           data={this.state.tablist}
           current={this.state.selected_tab}
           onChangeTab={function(id){
             this.setState({
-              selected_tab:id
+              selected_tab:Number(id)
             })
           }.bind(this)}
         ></Tab>
 
         <TabCont content={this.state.tab_content[this.state.selected_tab].cont}></TabCont>
 
-        <p class="tit-component-sub">Tag list</p>
+        <p className="tit-component-sub">Tag list</p>
         <Tag data={this.state.tags}></Tag>
 
       </div>

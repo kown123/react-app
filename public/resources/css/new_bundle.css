@@ -49,6 +49,7 @@ button {
   color: #253237;
   -webkit-hyphens: auto;
   hyphens: auto;
+  white-space:pre-wrap;
 }
 
 body,
