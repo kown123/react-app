@@ -1,48 +1,30 @@
 import React, {Component} from 'react';
-import TabCont from './TabCont'
-import $ from 'jquery';
 
 class Tab extends Component{
-    constructor(props){
-        super(props);
-        this.state = {
-            content_id:0,
-            tab_content:[
-                {id:0, cont:"컨텐츠1"},
-                {id:1, cont:"컨텐츠2"}
-            ]
-        }
-    }
-    tabToggle = (e) => {
-        // let $cont = $(e.currentTarget).attr("href");
-        let idx = $(e.currentTarget).parent().index();
-
-        e.preventDefault();
-        $(e.currentTarget).addClass("on").parent().siblings().find("> a").removeClass("on");
-        $(e.currentTarget).parents(".tab-list").next(".js-tab-cont").hide();
-        this.setState({content_id: idx});
-    }
-
     render(){
-        // if(this.state.content_id == 0){
+        var lists = [],
+            data = this.props.data;
+        for(var i = 0; i < data.length; i++){
+            lists.push(
+                <li key={data[i].id}>
+                    <a
+                        href="/" 
+                        data-id={data[i].id}
+                        className={ this.props.current == data[i].id ? "on": "" }
+                        onClick={function(e){
+                            e.preventDefault();
+                            this.props.onChangeTab(e.target.dataset.id);
+                        }.bind(this)}
+                    >{data[i].txt}</a>
+                </li>
+            );
+        }
 
-        // }else if(this.state.content_id == 1){
-            
-        // }
-      return (
-        <div>
+        return (
             <ul className="tab-list mt10">
-                <li><a href={"#" + this.props.link1} className="on" onClick={this.tabToggle}>{this.props.t1}</a></li>
-                <li><a href={"#" + this.props.link2} onClick={this.tabToggle}>{this.props.t2}</a></li>
+                {lists}
             </ul>
-            {/* <div id={this.props.link1} className="js-tab-cont">
-                <p className="fz16 mt10 al-c">
-                    {this.props.cont1}
-                </p>
-            </div> */}
-            <TabCont cont={this.state.tab_content[this.state.content_id].cont}></TabCont>
-        </div>
-      );
+        );
     }
 }
   

@@ -2,16 +2,16 @@ import React, {Component} from 'react';
 
 class Tag extends Component{
     render(){
-        let lists = [],
+        let tagLists = [],
             data = this.props.data;
 
         for(let i =0; i < data.length; i++){
-            lists.push(<span key={data[i].id} className={data[i].clsname}>{data[i].text}</span>);
+            tagLists.push(<span key={data[i].id} className={data[i].clsname}>{data[i].text}</span>);
             // debugger;
         }
       return (
         <p>
-            {lists}
+            {tagLists}
         </p>
       );
     }

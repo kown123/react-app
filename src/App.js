@@ -1,22 +1,38 @@
 import React, {Component} from 'react';
-
 /* import Mobiscroll JS and CSS */
 // import mobiscroll from "@mobiscroll/react";
 // import "@mobiscroll/react/dist/css/mobiscroll.min.css";
 import BoxAccent from './components/BoxAccent';
 import Tab from './components/Tab';
+import TabCont from './components/TabCont'
 import BoxApply from './components/BoxApply';
 import BoxRecommend from './components/BoxRecommend';
 import BoxProd from './components/BoxProd';
 import Tag from './components/Tag';
 import BoxTip from './components/BoxTip';
 import './App.css';
+// import $ from 'jquery';
+
 
 class App extends Component {
   constructor(props){
     super(props);
 
     this.state={
+      
+      //탭 리스트 
+      tablist:[
+        {id:0, txt:"만기교육자금"},
+        {id:1, txt:"교육자금 중도인출 설계"}
+      ],
+      selected_tab:0, //탭 인덱스
+      //탭 컨텐츠
+      tab_content:[
+        {id:0, cont:"컨텐츠1"},
+        {id:1, cont:"컨텐츠2"}
+      ],
+
+      //태그 리스트
       tags:[
         {id:1, clsname:"tag-type", text:"태그1"},
         {id:2, clsname:"tag-type fill", text:"태그2"},
@@ -27,7 +43,7 @@ class App extends Component {
     }
   }
   render(){
-    // window.$ = window.jQuery = jQuery;
+
     return (
       <div className="App wrap_new">
         <p className="tit-component-sub">Box</p>
@@ -64,19 +80,23 @@ class App extends Component {
 
         <BoxProd pName="정기보험" pDesc="#해지환금금이 없어요 #저렴한 암보험"></BoxProd>
 
+
+        <p class="tit-component-sub">Tab list</p>
+        <Tab
+          data={this.state.tablist}
+          current={this.state.selected_tab}
+          onChangeTab={function(id){
+            this.setState({
+              selected_tab:id
+            })
+          }.bind(this)}
+        ></Tab>
+
+        <TabCont content={this.state.tab_content[this.state.selected_tab].cont}></TabCont>
+
+        <p class="tit-component-sub">Tag list</p>
         <Tag data={this.state.tags}></Tag>
 
-        <div className="box-default bg-gray1 mt50">
-            <ul className="list-type02">
-                <li> <code>.js-tab-list</code> 클래스를 부여하면 탭기능이 활성화됨.</li>
-                <li> <code>.js-tab-cont</code> 클래스로 탭 컨텐츠영역으로 지정함.</li>
-                <li><code>a href="#plan1"</code> 함수로 탭컨텐츠 ID를 유니크하게 지정함.</li>
-            </ul>
-        </div>
-        <Tab
-          t1="만기교육자금" link1="plan1"
-          t2="교육자금 중도인출 설계" link2="plan2"
-        ></Tab>
       </div>
 
     );
