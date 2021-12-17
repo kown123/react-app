@@ -62,8 +62,8 @@ class App extends Component {
     }
   }
   render(){
-    var _boxAceent = null;
-    _boxAceent = <BoxAccent tit={this.state.box_content.tit} accent={this.state.box_content.accent} subTxt={this.state.box_content.subTxt}></BoxAccent>
+    var _boxAccent = null;
+    _boxAccent = <BoxAccent tit={this.state.box_content.tit} accent={this.state.box_content.accent} subTxt={this.state.box_content.subTxt}></BoxAccent>
 
     return (
       <div className="App wrap_new">
@@ -162,7 +162,7 @@ class App extends Component {
         <BoxApply></BoxApply>
         
         <p className="tit-component-sub mt50">BoxAccent</p>
-        {_boxAceent}
+        {_boxAccent}
 
         <p className="tit-component-sub mt50">BoxTip</p>
         <BoxTip tit="고액암이란?" desc="뼈 및 관절연골, 뇌 및 중추신경계통, 림프, 조혈 및 관련조직 등에 발생하는 암"></BoxTip>
