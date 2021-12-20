@@ -1,0 +1,52 @@
+.component {
+  background: #fff;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.tit-component {
+  margin-top: 50px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #000000;
+}
+.tit-component:first-child {
+  margin-top: 0;
+}
+
+.tit-component + .tit-component-sub {
+  margin-top: 5px;
+}
+
+.tit-component-sub {
+  display: block;
+  margin: 20px -20px 10px;
+  padding: 10px 20px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  background-color: #E0E9EF;
+}
+.tit-component-sub:before {
+  content: "#";
+}
+
+.color-guide {
+  margin-top: 10px;
+}
+.color-guide > .item {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  border: 1px solid #E0E9EF;
+  align-items: center;
+}
+.color-guide > .item.bg-gray5, .color-guide > .item.bg-gray6, .color-guide > .item.bg-gray7, .color-guide > .item.bg-primary4 {
+  color: #fff;
+}
+.color-guide._scroll > .item {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}

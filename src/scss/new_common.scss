@@ -1107,7 +1107,7 @@ a._under{
 
 .btn-process{
 	@extend .btn-wrap;
-	@extend .btn-wrap.floating;
+	@extend .btn-wrap, .floating;
 	> .inner{
 		padding-top:20px;
 		// padding-bottom:calc(constant(safe-area-inset-bottom) + 20px);
