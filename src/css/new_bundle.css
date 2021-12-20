@@ -543,6 +543,18 @@ footer.footer .logo {
   font-weight: 100 !important;
 }
 
+.fz-normal {
+  font-weight: 400 !important;
+}
+
+.fz-medium {
+  font-weight: 500 !important;
+}
+
+.fz-bold {
+  font-weight: 700 !important;
+}
+
 .txt-overflow {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1906,7 +1918,12 @@ footer.footer .logo {
   height: 0;
 }
 
+.on > .popup.renew .btn-pop-cls {
+  display: block;
+}
+
 .popup.renew .btn-pop-cls {
+  display: none;
   position: fixed;
   right: 9px;
   top: 8px;

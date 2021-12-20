@@ -1121,7 +1121,8 @@ function callTooltip(id){
 			url:id,
 			dataType:"html"
 		}).done(function(data){
-			var tooltipContent = $(data).attr("data-tooltip-id", id);
+            var tooltipContent = $(data).attr("data-tooltip-id", id);
+            console.log(data);
 			$(".tooltip .tip_content_wrap > .tip_content").remove();
 			$(".tooltip .tip_content_wrap ").prepend(tooltipContent);
 			setTimeout(function(){

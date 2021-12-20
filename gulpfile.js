@@ -32,9 +32,9 @@ gulp.task('concat', function () {
     .pipe(gulp.dest(dist));//임시 
 });
 
-gulp.task('watch', function () {
+gulp.task('default', function () {
   // gulp.watch(paths.scss, ['sass'])
   gulp.watch(src + '/scss/*.scss', gulp.series(['sass', 'concat'])); 
 });
 
-gulp.task('default', gulp.series(['sass', 'concat', 'watch']));
+// gulp.task('default', gulp.series(['sass', 'concat', 'watch']));

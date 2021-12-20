@@ -16,6 +16,11 @@ import Toggle from './components/Toggle'
 // import Banner from './components/Banner'
 import Banner from './components/Banner'
 import LinkList from './components/LinkList';
+import SassGuide from './components/SassGuide';
+import TyopGuide from './components/TypoGuide';
+import ColorGuide from './components/ColorGuide';
+import LayerTip from './components/LayerTip';
+import Popup from './components/Popup';
 import './App.css';
 
 class App extends Component {
@@ -67,9 +72,14 @@ class App extends Component {
 
     return (
       <div className="App wrap_new">
-        
+
+        <SassGuide></SassGuide>
+        <ColorGuide></ColorGuide>
+        <TyopGuide></TyopGuide>
+
         {/* 버튼 모음 */}
-        <p className="tit-component-sub mt0">Btn</p>
+        <h2 className="fz24 mt50"><strong>Component</strong></h2>
+        <p className="tit-component-sub mt10">Btn</p>
         <Btn type="primary" text="버튼 타입1"></Btn>
         <Btn type="second" text="버튼 타입2"></Btn>
         <Btn type="ex1" text="버튼 타입3"></Btn>
@@ -166,6 +176,10 @@ class App extends Component {
 
         <p className="tit-component-sub mt50">BoxTip</p>
         <BoxTip tit="고액암이란?" desc="뼈 및 관절연골, 뇌 및 중추신경계통, 림프, 조혈 및 관련조직 등에 발생하는 암"></BoxTip>
+
+        <LayerTip location="./views/common/ct/CT00119L.html" text="태아 안내 >"></LayerTip>
+        
+        <Popup text="보장금액 자세히 보기"></Popup>
 
         <p className="tit-component-sub mt50">BoxProd</p>
         <BoxProd pName="정기보험" pDesc="#해지환금금이 없어요 #저렴한 암보험"></BoxProd>

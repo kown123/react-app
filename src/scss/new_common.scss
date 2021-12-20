@@ -366,6 +366,9 @@ footer.footer{
 .fz24{font-size:24px !important;line-height:30px;letter-spacing:-1px;}
 .fz30{font-size:30px !important;line-height:35px;letter-spacing:-1px;}
 .fz-light{font-weight:100 !important}
+.fz-normal{font-weight:400 !important}
+.fz-medium{font-weight:500 !important}
+.fz-bold{font-weight:700 !important}
 .txt-overflow{overflow: hidden;text-overflow: ellipsis;width: 100%;white-space: nowrap;}
 
 
@@ -930,7 +933,13 @@ footer.footer{
 }
 
 .popup.renew{
+	.on > &{
+		.btn-pop-cls{
+			display:block;
+		}	
+	}
 	.btn-pop-cls{
+		display:none;
 		position:fixed;
 		right:9px;
 		top:8px;

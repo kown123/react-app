@@ -20,7 +20,7 @@ class LinkList extends Component{
         }
 
       return (
-        <ul class="list-type01">
+        <ul className="list-type01">
             {lists}
         </ul>
       );
