@@ -1,8 +1,8 @@
 // gulpfile.js
 var gulp = require('gulp'),
-    sass = require('gulp-sass')(require('sass'));
-    // concatCss = require('gulp-concat-css'),
-    // watch = require('gulp-watch'),
+    sass = require('gulp-sass')(require('sass')),
+    concatCss = require('gulp-concat-css'),
+    watch = require('gulp-watch');
     // cleanCSS = require('gulp-clean-css'),
     // liveload = require('gulp-livereload');
 //var csscomb = require('gulp-csscomb');
@@ -28,21 +28,12 @@ gulp.task('sass', function () {
 //   gulp.watch('./src/scss/*.scss', ['sass']);  // 입력 경로와 파일 변경 감지 시 실행할 Actions(Task Name)
 // });
 
-// gulp.task('concat', function () {
-//   return gulp.src(src + '/styles/*.css')
-//     .pipe(concatCss("new_bundle.css"))
-//     .pipe(gulp.dest(src + '/css'))
-//     .pipe(gulp.dest(dist));//임시 
-// });
-
-//css conbine
-/*
-// gulp.task('combine', function() {
-//   return gulp.src('./src/styles/newLp.css')
-//     .pipe(csscomb())
-//     .pipe(gulp.dest(dist));
-// });
-*/
+gulp.task('concat', function () {
+  return gulp.src(src + '/styles/*.css')
+    .pipe(concatCss("new_bundle.css"))
+    .pipe(gulp.dest(src + '/css'))
+    .pipe(gulp.dest(dist));//임시 
+});
 
 //css minify
 // gulp.task('minify', () => {
@@ -51,12 +42,12 @@ gulp.task('sass', function () {
 //     .pipe(gulp.dest(dist));
 // });
 
-// gulp.task('watch', function () {
-//   watch(paths.scss, ['sass']);  
-//   watch(src + '/styles/*.css', ['concat']); 
-// });
+gulp.task('sass:watch', function () {
+  gulp.watch(paths.scss, ['sass']);  
+  gulp.watch(src + '/scss/*.scss', ['sass', 'concat']); 
+});
 
 // gulp.task('default', gulp.series('gulp_sass', 'concat'));
 
 // gulp.task('default', gulp.series(['sass', 'concat', 'minify']));
-gulp.task('default', gulp.series(['sass']));
+// gulp.task('default', gulp.series(['sass', 'sass:watch', 'concat']));
