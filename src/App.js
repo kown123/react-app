@@ -169,7 +169,7 @@ class App extends Component {
         <BoxRecommend></BoxRecommend>
 
         <p className="tit-component-sub mt50">BoxApply</p>
-        <BoxApply></BoxApply>
+        <BoxApply txt="가입중" count="6"></BoxApply>
         
         <p className="tit-component-sub mt50">BoxAccent</p>
         {_boxAccent}

@@ -11,7 +11,7 @@ class BoxApply extends Component{
                 e.preventDefault();  
               }}
             >
-                고객님께서 <br />현재 <strong>가입중인 상품</strong>이<br /><strong className="c-primary2">6건</strong> 있어요.
+                고객님께서 <br />현재 <strong>{this.props.txt}인 상품</strong>이<br /><strong className="c-primary2">{this.props.count}건</strong> 있어요.
             </a>
         </div>
       );
